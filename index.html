@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>HJFR Timer</title>
+        <style>
+            h1 {
+            font-size:150px;
+            text-align:center;
+            margin-bottom:0
+            }
+            p {
+                text-align:center;
+                font-size:15px;
+                color:#555
+            }
+            .container {
+                position:absolute;
+                left:50%;
+                top:40%;
+                transform:translate(-50%,-50%);
+                padding:10px
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1 id="difference"></h1>
+            <p>Days Left</p>
+        </div>
+
+        <script>
+            var start = new Date("02/15/2020");
+            var currentDate = new Date();
+            var today = new Date((currentDate.getMonth()+1) + "/" + currentDate.getDate() + "/" + currentDate.getFullYear());
+            var Difference_In_Time = today.getTime() - start.getTime();
+            var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+            document.getElementById("difference").innerHTML = Difference_In_Days;
+        </script>
+    </body>
+</html>
